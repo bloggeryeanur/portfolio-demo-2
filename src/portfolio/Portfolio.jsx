@@ -70,7 +70,7 @@ export default function PortFolio() {
   const work = [One, Two, Four, Five];
 
   return (
-    <Container maxWidth="lg">
+    <Container maxWidth="md">
       <Box>
         <CenterTitle
           title="Our Works"
@@ -123,7 +123,7 @@ export default function PortFolio() {
                   key={hi}
                   sx={{ display: "flex", justifyContent: "center" }}
                   xs={12}
-                  sm={6}
+                  sm={12}
                   md={4}
                   lg={3}
                   xl={3}>
@@ -148,7 +148,7 @@ export default function PortFolio() {
                   key={hi}
                   sx={{ display: "flex", justifyContent: "center" }}
                   xs={12}
-                  sm={6}
+                  sm={12}
                   md={4}
                   lg={3}
                   xl={3}>
@@ -173,7 +173,7 @@ export default function PortFolio() {
                   key={hi}
                   sx={{ display: "flex", justifyContent: "center" }}
                   xs={12}
-                  sm={6}
+                  sm={12}
                   md={4}
                   lg={3}
                   xl={3}>
@@ -198,7 +198,7 @@ export default function PortFolio() {
                   key={hi}
                   sx={{ display: "flex", justifyContent: "center" }}
                   xs={12}
-                  sm={6}
+                  sm={12}
                   md={4}
                   lg={3}
                   xl={3}>
@@ -223,7 +223,7 @@ export default function PortFolio() {
                   key={hi}
                   sx={{ display: "flex", justifyContent: "center" }}
                   xs={12}
-                  sm={6}
+                  sm={12}
                   md={4}
                   lg={3}
                   xl={3}>

@@ -3,45 +3,95 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
-import { Box, Container } from "@mui/material";
-import Client1 from '../image/client/testi-1.jpg'
-import Client2 from '../image/client/testi-2.jpg'
-import Client3 from '../image/client/testi-3.jpg'
+import { Box, Container, Grid } from "@mui/material";
+import One from "../image/client/testi-1.jpg";
 import CenterTitle from "../component/CenterTitle";
-
 
 const Client = () => {
   return (
-    <Container maxWidth="lg" sx={{ margin: "1rem 0" }}>
-        <CenterTitle title='Our Client' text='It is a long established fact that a reader will be of a page when e' text2='stablished fact looking at its layout.'/>
-      <Swiper
-        spaceBetween={30}
-        centeredSlides={true}
-        autoplay={{
-          delay: 2500,
-          disableOnInteraction: false,
-        }}
-        pagination={{
-          clickable: true,
-        }}
-        navigation={true}
-        modules={[Autoplay, Pagination, Navigation]}
-        className="mySwiper">
-            
+    <Container maxWidth="xs">
+      <Grid
+        container
+        justifyContent="center"
+        alignItems="center"
+        spacing={2}
+        style={{ minHeight: "100vh",}}
+      >
+        <Grid item xs={12}>
+          <CenterTitle title="Our Satisfied Client" />
+        </Grid>
+        <Grid item xs={12}>
+          <Swiper
+            spaceBetween={30}
+            centeredSlides={true}
+            autoplay={{
+              delay: 1500,
+              disableOnInteraction: false,
+            }}
+            pagination={{
+              clickable: true,
+            }}
+            navigation={true}
+            modules={[Autoplay, Pagination, Navigation]}
+          >
             <SwiperSlide>
-          <Box sx={{ background: "gray", height: "15rem", color: "white" }}>
-            Slide 1
-            </Box>
-            </SwiperSlide><SwiperSlide>
-          <Box sx={{ background: "gray", height: "15rem", color: "white" }}>
-            Slide 1
-            </Box>
-            </SwiperSlide><SwiperSlide>
-          <Box sx={{ background: "gray", height: "15rem", color: "white" }}>
-            Slide 3
-            </Box>
+              <Box textAlign="center">
+                <img
+                  src={One}
+                  alt="Client"
+                  style={{
+                    borderRadius: "50%",
+                    maxWidth: "100px",
+                    height: "100px",
+                  }}
+                />
+                <CenterTitle
+                  title="--Mr. Rahman--"
+                  text="E-commerce"
+                  text2="Frontend and Backend Developer"
+                />
+              </Box>
             </SwiperSlide>
-      </Swiper>
+            <SwiperSlide>
+              <Box textAlign="center">
+                <img
+                  src={One}
+                  alt="Client"
+                  style={{
+                    borderRadius: "50%",
+                    maxWidth: "100px",
+                    height: "100px",
+                  }}
+                />
+                <CenterTitle
+                  title="--Mr. Rahman--"
+                  text="E-commerce"
+                  text2="Frontend and Backend Developer"
+                />
+              </Box>
+            </SwiperSlide>
+            <SwiperSlide>
+              <Box textAlign="center">
+                <img
+                  src={One}
+                  alt="Client"
+                  style={{
+                    borderRadius: "50%",
+                    maxWidth: "100px",
+                    height: "100px",
+                  }}
+                />
+                <CenterTitle
+                  title="--Mr. Rahman--"
+                  text="E-commerce"
+                  text2="Frontend and Backend Developer"
+                />
+              </Box>
+            </SwiperSlide>
+            {/* Add more slides as needed */}
+          </Swiper>
+        </Grid>
+      </Grid>
     </Container>
   );
 };

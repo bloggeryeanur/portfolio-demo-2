@@ -9,8 +9,7 @@ import CenterTitle from "../component/CenterTitle";
 
 const Contact = () => {
   return (
-    <Container>
-      <Box maxWidth="lg">
+    <Container maxWidth="md">
         <Box sx={{ margin: "2rem 0" }}>
           <CenterTitle
             title="Contact Us"
@@ -83,7 +82,6 @@ const Contact = () => {
               </Box>
             </Box>
           </Box>
-        </Box>
       </Box>
     </Container>
   );

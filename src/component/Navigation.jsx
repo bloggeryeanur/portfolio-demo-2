@@ -33,11 +33,17 @@ import AddHomeIcon from "@mui/icons-material/AddHome";
 import BroadcastOnHomeIcon from "@mui/icons-material/BroadcastOnHome";
 import AdminPanelSettingsIcon from "@mui/icons-material/AdminPanelSettings";
 import AirlineSeatReclineExtraIcon from "@mui/icons-material/AirlineSeatReclineExtra";
-import { Link } from "react-scroll";
-import { Button } from "@mui/material";
+import NavIcon from "./NavIcon";
+import { Tooltip } from "@mui/material";
+import FQA from "../FQA/FQA";
+import ScrollToTop from "react-scroll-to-top";
+import ArrowCircleUpIcon from "@mui/icons-material/ArrowCircleUp";
 import Client from "../Client/Client";
 
-const drawerWidth = 240;
+// Nav button simple modify
+
+//
+const drawerWidth = 145;
 
 const openedMixin = (theme) => ({
   width: drawerWidth,
@@ -118,6 +124,7 @@ export default function Navigation() {
 
   return (
     <Box sx={{ display: "flex" }}>
+      <ScrollToTop smooth component={<ArrowCircleUpIcon color="secondary" />} />
       <CssBaseline />
       <AppBar color="secondary" position="fixed" open={open}>
         <Toolbar>
@@ -147,7 +154,7 @@ export default function Navigation() {
             )}
           </IconButton>
         </DrawerHeader>
-        <Divider sx={{ background: "#9400D3" }} />
+        <Divider sx={{ background: "yellow" }} />
         {/* List  */}
         <List sx={{ color: "#9400D3" }}>
           {/* */}
@@ -179,68 +186,50 @@ export default function Navigation() {
                     justifyContent: "center",
                   }}>
                   {index === 0 ? (
-                    <Link
-                      to="home"
-                      spy={true}
-                      smooth={true}
-                      offset={50}
-                      duration={500}>
-                      <AddHomeIcon color="secondary" />
-                    </Link>
+                    <NavIcon
+                      id={"home"}
+                      menuBtn={<AddHomeIcon color="secondary" />}
+                    />
                   ) : index === 1 ? (
-                    <Link
-                      to="about"
-                      spy={true}
-                      smooth={true}
-                      offset={50}
-                      duration={500}>
-                      <BroadcastOnHomeIcon color="secondary" />
-                    </Link>
+                    <NavIcon
+                      id={"about"}
+                      menuBtn={<BroadcastOnHomeIcon color="secondary" />}
+                    />
                   ) : index === 2 ? (
-                    <Link
-                      to="services"
-                      spy={true}
-                      smooth={true}
-                      offset={50}
-                      duration={500}>
-                      <AdminPanelSettingsIcon color="secondary" />
-                    </Link>
+                    <NavIcon
+                      id={"services"}
+                      menuBtn={<AdminPanelSettingsIcon color="secondary" />}
+                    />
                   ) : index === 3 ? (
-                    <Link
-                      to="portfolio"
-                      spy={true}
-                      smooth={true}
-                      offset={50}
-                      duration={500}>
-                      <AddBusinessIcon color="secondary" />
-                    </Link>
+                    <NavIcon
+                      id={"portfolio"}
+                      menuBtn={<AddBusinessIcon color="secondary" />}
+                    />
                   ) : index === 4 ? (
-                    <Link
-                      to="blog"
-                      spy={true}
-                      smooth={true}
-                      offset={50}
-                      duration={500}>
-                      <AirlineSeatReclineExtraIcon color="secondary" />
-                    </Link>
+                    <NavIcon
+                      id={"blog"}
+                      menuBtn={
+                        <AirlineSeatReclineExtraIcon color="secondary" />
+                      }
+                    />
                   ) : index === 5 ? (
-                    <Link
-                      to="client"
-                      spy={true}
-                      smooth={true}
-                      offset={50}
-                      duration={500}>
-                      <InboxIcon color="secondary" />
-                    </Link>
+                    <NavIcon
+                      id={"client"}
+                      menuBtn={
+                        <Tooltip title="Our Client">
+                          <InboxIcon color="secondary" />
+                        </Tooltip>
+                      }
+                    />
                   ) : (
-                    <Link
-                      to="contact"
-                      spy={true}
-                      smooth={true}
-                      offset={50}
-                      duration={600}>
-                      <MailIcon color="secondary" />
-                    </Link>
+                    <NavIcon
+                      id={"contact"}
+                      menuBtn={
+                        <Tooltip title="contact me" placement="left">
+                          <MailIcon color="secondary" />
+                        </Tooltip>
+                      }
+                    />
                   )}
                 </ListItemIcon>
                 <ListItemText
@@ -276,14 +265,18 @@ export default function Navigation() {
           <Blog />
         </Box>
 
-        <Box id="client">
-        
-        </Box>
+        {/* <Box id="client">
+          <Client/>
+        </Box> */}
         <Box id="contact">
           <Contact />
         </Box>
-
-        <Footer />
+        <Box id="">
+          <FQA />
+        </Box>
+        <Box>
+          <Footer />
+        </Box>
       </Box>
     </Box>
   );
